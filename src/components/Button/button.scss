@@ -1,60 +1,226 @@
 @import "../index.scss";
 
+$small-y: 0.5rem;
+$small-x: 1rem;
+$medium-y: 0.75rem;
+$medium-x: 1.5rem;
+$large-y: 1rem;
+$large-x: 2rem;
+
+@mixin buttonThemedStyles(
+  $text-color,
+  $bg-color,
+  $border-color,
+  $hover-text-color,
+  $hover-bg-color,
+  $hover-border-color
+) {
+  color: $text-color;
+  background-color: $bg-color;
+  border-color: $border-color;
+
+  &:hover {
+    opacity: 0.7;
+    color: $hover-text-color;
+    background-color: $hover-bg-color;
+    border-color: $hover-border-color;
+  }
+
+  &:active {
+    opacity: 1;
+    scale: 0.95;
+  }
+
+  &:disabled {
+    color: $text-color;
+    background-color: $bg-color;
+    border-color: $border-color;
+    cursor: not-allowed;
+    opacity: 0.5;
+    scale: 1;
+  }
+}
+
+@mixin buttonSizePadding($y, $x) {
+  padding: $y $x;
+}
+
+@mixin buttonRoundSize($size) {
+  border-radius: $size;
+}
+
 .btn {
-  border: none;
   color: #FFF;
   border-radius: 0.5rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+  user-select: none;
+  border: 1px solid;
+  text-align: center;
 }
 
 // Button variants
-.btn-primary {
-  background-color: $coffee-primary-color;
-  border: 1px $coffee-primary-color solid;
+.btn--primary {
+  @include buttonThemedStyles(
+    $coffee-light-main,
+    $coffee-primary-main,
+    $coffee-primary-main,
+    $coffee-light-main,
+    $coffee-primary-main,
+    $coffee-primary-main
+  );
 }
 
-.btn-success {
-  background-color: $coffee-success-color;
-  border: 1px $coffee-success-color solid;
+.btn--primary.is-plain {
+  @include buttonThemedStyles(
+    $coffee-primary-main,
+    $coffee-primary-plain,
+    $coffee-primary-plain-border,
+    $coffee-light-main,
+    $coffee-primary-main,
+    $coffee-primary-main
+  );
 }
 
-.btn-info {
-  background-color: $coffee-info-color;
-  border: 1px $coffee-info-color solid;
+.btn--success {
+  @include buttonThemedStyles(
+    $coffee-light-main,
+    $coffee-success-main,
+    $coffee-success-main,
+    $coffee-light-main,
+    $coffee-success-main,
+    $coffee-success-main
+  );
 }
 
-.btn-warning {
-  background-color: $coffee-warning-color;
-  border: 1px $coffee-warning-color solid;
+.btn--success.is-plain {
+  @include buttonThemedStyles(
+    $coffee-success-main,
+    $coffee-success-plain,
+    $coffee-success-plain-border,
+    $coffee-light-main,
+    $coffee-success-main,
+    $coffee-success-main
+  );
 }
 
-.btn-danger {
-  background-color: $coffee-danger-color;
-  border: 1px $coffee-danger-color solid;
+.btn--info {
+  @include buttonThemedStyles(
+    $coffee-light-main,
+    $coffee-info-main,
+    $coffee-info-main,
+    $coffee-light-main,
+    $coffee-info-main,
+    $coffee-info-main
+  );
 }
 
-.btn-text {
-  background-color: $coffee-text-color;
-  color: $coffee-primary-color;
-  border: 1px $coffee-primary-color solid;
+.btn--info.is-plain {
+  @include buttonThemedStyles(
+    $coffee-info-main,
+    $coffee-info-plain,
+    $coffee-info-plain-border,
+    $coffee-light-main,
+    $coffee-info-main,
+    $coffee-info-main
+  );
+}
+
+.btn--warning {
+  @include buttonThemedStyles(
+    $coffee-light-main,
+    $coffee-warning-main,
+    $coffee-warning-main,
+    $coffee-light-main,
+    $coffee-warning-main,
+    $coffee-warning-main
+  );
+}
+
+.btn--warning.is-plain {
+  @include buttonThemedStyles(
+    $coffee-warning-main,
+    $coffee-warning-plain,
+    $coffee-warning-plain-border,
+    $coffee-light-main,
+    $coffee-warning-main,
+    $coffee-warning-main
+  );
+}
+
+.btn--danger {
+  @include buttonThemedStyles(
+    $coffee-light-main,
+    $coffee-danger-main,
+    $coffee-danger-main,
+    $coffee-light-main,
+    $coffee-danger-main,
+    $coffee-danger-main
+  );
+}
+
+.btn--danger.is-plain {
+  @include buttonThemedStyles(
+    $coffee-danger-main,
+    $coffee-danger-plain,
+    $coffee-danger-plain-border,
+    $coffee-light-main,
+    $coffee-danger-main,
+    $coffee-danger-main
+  );
+}
+
+.btn--text {
+  @include buttonThemedStyles(
+    $coffee-dark-main,
+    $coffee-light-main,
+    $coffee-dark-main,
+    $coffee-primary-main,
+    $coffee-primary-plain,
+    $coffee-primary-plain-border
+  );
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.btn--text.is-plain {
+  @include buttonThemedStyles(
+    $coffee-dark-main,
+    $coffee-light-main,
+    $coffee-dark-main,
+    $coffee-primary-main,
+    $coffee-light-main,
+    $coffee-primary-plain-border
+  );
+  &:hover {
+    opacity: 1;
+  }
 }
 
 // Button sizes
-.btn-small {
-  padding: 0.375rem 0.75rem;
+.btn--small {
+  @include buttonSizePadding($small-y, $small-x);
 }
 
-.btn-medium {
-  padding: 0.5rem 1rem;
+.btn--medium {
+  @include buttonSizePadding($medium-y, $medium-x);
 }
 
-.btn-large {
-  padding: 0.75rem 1.5rem;
+.btn--large {
+  @include buttonSizePadding($large-y, $large-x);
+}
+
+// Rounded corner buttons
+.btn--small.is-round {
+  @include buttonRoundSize($small-x);
+}
+
+.btn--medium.is-round {
+  @include buttonRoundSize($medium-x);
+}
+
+.btn--large.is-round {
+  @include buttonRoundSize($large-x);
 }
