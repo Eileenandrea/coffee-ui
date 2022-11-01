@@ -41,8 +41,9 @@ $large-x: 2rem;
   }
 }
 
-@mixin buttonSizePadding($y, $x) {
+@mixin buttonSizePadding($y, $x, $font-size) {
   padding: $y $x;
+  font-size: $font-size;
 }
 
 @mixin buttonRoundSize($size) {
@@ -58,169 +59,169 @@ $large-x: 2rem;
   user-select: none;
   border: 1px solid;
   text-align: center;
-}
 
-// Button variants
-.btn--primary {
-  @include buttonThemedStyles(
-    $coffee-light-main,
-    $coffee-primary-main,
-    $coffee-primary-main,
-    $coffee-light-main,
-    $coffee-primary-main,
-    $coffee-primary-main
-  );
-}
-
-.btn--primary.is-plain {
-  @include buttonThemedStyles(
-    $coffee-primary-main,
-    $coffee-primary-plain,
-    $coffee-primary-plain-border,
-    $coffee-light-main,
-    $coffee-primary-main,
-    $coffee-primary-main
-  );
-}
-
-.btn--success {
-  @include buttonThemedStyles(
-    $coffee-light-main,
-    $coffee-success-main,
-    $coffee-success-main,
-    $coffee-light-main,
-    $coffee-success-main,
-    $coffee-success-main
-  );
-}
-
-.btn--success.is-plain {
-  @include buttonThemedStyles(
-    $coffee-success-main,
-    $coffee-success-plain,
-    $coffee-success-plain-border,
-    $coffee-light-main,
-    $coffee-success-main,
-    $coffee-success-main
-  );
-}
-
-.btn--info {
-  @include buttonThemedStyles(
-    $coffee-light-main,
-    $coffee-info-main,
-    $coffee-info-main,
-    $coffee-light-main,
-    $coffee-info-main,
-    $coffee-info-main
-  );
-}
-
-.btn--info.is-plain {
-  @include buttonThemedStyles(
-    $coffee-info-main,
-    $coffee-info-plain,
-    $coffee-info-plain-border,
-    $coffee-light-main,
-    $coffee-info-main,
-    $coffee-info-main
-  );
-}
-
-.btn--warning {
-  @include buttonThemedStyles(
-    $coffee-light-main,
-    $coffee-warning-main,
-    $coffee-warning-main,
-    $coffee-light-main,
-    $coffee-warning-main,
-    $coffee-warning-main
-  );
-}
-
-.btn--warning.is-plain {
-  @include buttonThemedStyles(
-    $coffee-warning-main,
-    $coffee-warning-plain,
-    $coffee-warning-plain-border,
-    $coffee-light-main,
-    $coffee-warning-main,
-    $coffee-warning-main
-  );
-}
-
-.btn--danger {
-  @include buttonThemedStyles(
-    $coffee-light-main,
-    $coffee-danger-main,
-    $coffee-danger-main,
-    $coffee-light-main,
-    $coffee-danger-main,
-    $coffee-danger-main
-  );
-}
-
-.btn--danger.is-plain {
-  @include buttonThemedStyles(
-    $coffee-danger-main,
-    $coffee-danger-plain,
-    $coffee-danger-plain-border,
-    $coffee-light-main,
-    $coffee-danger-main,
-    $coffee-danger-main
-  );
-}
-
-.btn--text {
-  @include buttonThemedStyles(
-    $coffee-dark-main,
-    $coffee-light-main,
-    $coffee-dark-main,
-    $coffee-primary-main,
-    $coffee-primary-plain,
-    $coffee-primary-plain-border
-  );
-  &:hover {
-    opacity: 1;
+  // Button variants
+  &--primary {
+    @include buttonThemedStyles(
+      $coffee-light-main,
+      $coffee-primary-main,
+      $coffee-primary-main,
+      $coffee-light-main,
+      $coffee-primary-main,
+      $coffee-primary-main
+    );
   }
-}
 
-.btn--text.is-plain {
-  @include buttonThemedStyles(
-    $coffee-dark-main,
-    $coffee-light-main,
-    $coffee-dark-main,
-    $coffee-primary-main,
-    $coffee-light-main,
-    $coffee-primary-plain-border
-  );
-  &:hover {
-    opacity: 1;
+  &--primary.is-plain {
+    @include buttonThemedStyles(
+      $coffee-primary-main,
+      $coffee-primary-plain,
+      $coffee-primary-plain-border,
+      $coffee-light-main,
+      $coffee-primary-main,
+      $coffee-primary-main
+    );
   }
-}
 
-// Button sizes
-.btn--small {
-  @include buttonSizePadding($small-y, $small-x);
-}
+  &--success {
+    @include buttonThemedStyles(
+      $coffee-light-main,
+      $coffee-success-main,
+      $coffee-success-main,
+      $coffee-light-main,
+      $coffee-success-main,
+      $coffee-success-main
+    );
+  }
 
-.btn--medium {
-  @include buttonSizePadding($medium-y, $medium-x);
-}
+  &--success.is-plain {
+    @include buttonThemedStyles(
+      $coffee-success-main,
+      $coffee-success-plain,
+      $coffee-success-plain-border,
+      $coffee-light-main,
+      $coffee-success-main,
+      $coffee-success-main
+    );
+  }
+  
+  &--info {
+    @include buttonThemedStyles(
+      $coffee-light-main,
+      $coffee-info-main,
+      $coffee-info-main,
+      $coffee-light-main,
+      $coffee-info-main,
+      $coffee-info-main
+    );
+  }
+  
+  &--info.is-plain {
+    @include buttonThemedStyles(
+      $coffee-info-main,
+      $coffee-info-plain,
+      $coffee-info-plain-border,
+      $coffee-light-main,
+      $coffee-info-main,
+      $coffee-info-main
+    );
+  }
+  
+  &--warning {
+    @include buttonThemedStyles(
+      $coffee-light-main,
+      $coffee-warning-main,
+      $coffee-warning-main,
+      $coffee-light-main,
+      $coffee-warning-main,
+      $coffee-warning-main
+    );
+  }
+  
+  &--warning.is-plain {
+    @include buttonThemedStyles(
+      $coffee-warning-main,
+      $coffee-warning-plain,
+      $coffee-warning-plain-border,
+      $coffee-light-main,
+      $coffee-warning-main,
+      $coffee-warning-main
+    );
+  }
+  
+  &--danger {
+    @include buttonThemedStyles(
+      $coffee-light-main,
+      $coffee-danger-main,
+      $coffee-danger-main,
+      $coffee-light-main,
+      $coffee-danger-main,
+      $coffee-danger-main
+    );
+  }
+  
+  &--danger.is-plain {
+    @include buttonThemedStyles(
+      $coffee-danger-main,
+      $coffee-danger-plain,
+      $coffee-danger-plain-border,
+      $coffee-light-main,
+      $coffee-danger-main,
+      $coffee-danger-main
+    );
+  }
+  
+  &--text {
+    @include buttonThemedStyles(
+      $coffee-dark-main,
+      $coffee-light-main,
+      $coffee-dark-main,
+      $coffee-primary-main,
+      $coffee-primary-plain,
+      $coffee-primary-plain-border
+    );
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  &--text.is-plain {
+    @include buttonThemedStyles(
+      $coffee-dark-main,
+      $coffee-light-main,
+      $coffee-dark-main,
+      $coffee-primary-main,
+      $coffee-light-main,
+      $coffee-primary-plain-border
+    );
+    &:hover {
+      opacity: 1;
+    }
+  }
 
-.btn--large {
-  @include buttonSizePadding($large-y, $large-x);
-}
+  // Button sizes
+  &--small {
+    @include buttonSizePadding($small-y, $small-x, $coffee-font-small);
+  }
 
-// Rounded corner buttons
-.btn--small.is-round {
-  @include buttonRoundSize($small-x);
-}
+  &--medium {
+    @include buttonSizePadding($medium-y, $medium-x, $coffee-font-medium);
+  }
 
-.btn--medium.is-round {
-  @include buttonRoundSize($medium-x);
-}
+  &--large {
+    @include buttonSizePadding($large-y, $large-x, $coffee-font-large);
+  }
 
-.btn--large.is-round {
-  @include buttonRoundSize($large-x);
+  // Rounded corner buttons
+  &--small.is-round {
+    @include buttonRoundSize($small-x);
+  }
+
+  &--medium.is-round {
+    @include buttonRoundSize($medium-x);
+  }
+
+  &--large.is-round {
+    @include buttonRoundSize($large-x);
+  }
 }
