@@ -1,0 +1,119 @@
+@import "../index.scss";
+
+@mixin inputSizePadding($y, $x, $font-size) {
+  padding: $y $x;
+  font-size: $font-size;
+}
+
+@mixin inputRoundSize($size) {
+  border-radius: $size;
+}
+
+@mixin inputBorderStyle(
+  $border-color,
+  $shadow-color,
+  $focus-color,
+  $hover-color
+) {
+  border-color: $border-color;
+
+  &:focus {
+    border-color: $focus-color;
+    box-shadow: 0 0 5px $shadow-color;
+  }
+
+  &:hover {
+    border-color: $hover-color;
+  }
+
+  &:disabled {
+    border-color: $border-color;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.input {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: text;
+  outline: none;
+  border: 1px solid;
+  color: $coffee-text-secondary;
+  @include inputBorderStyle(
+    $coffee-text-light,
+    $coffee-text-light,
+    $coffee-text-secondary,
+    $coffee-text-secondary
+  );
+
+  &--primary {
+    @include inputBorderStyle(
+      $coffee-primary-plain-border,
+      $coffee-primary-plain-border,
+      $coffee-primary-main,
+      $coffee-primary-main
+    );
+  }
+
+  &--success {
+    @include inputBorderStyle(
+      $coffee-success-plain-border,
+      $coffee-success-plain-border,
+      $coffee-success-main,
+      $coffee-success-main
+    );
+  }
+
+  &--info {
+    @include inputBorderStyle(
+      $coffee-info-plain-border,
+      $coffee-info-plain-border,
+      $coffee-info-main,
+      $coffee-info-main
+    );
+  }
+
+  &--warning {
+    @include inputBorderStyle(
+      $coffee-warning-plain-border,
+      $coffee-warning-plain-border,
+      $coffee-warning-main,
+      $coffee-warning-main
+    );
+  }
+
+  &--danger {
+    @include inputBorderStyle(
+      $coffee-danger-plain-border,
+      $coffee-danger-plain-border,
+      $coffee-danger-main,
+      $coffee-danger-main
+    );
+  }
+
+  &--small {
+    @include inputSizePadding($small-y, $small-x, $coffee-font-small);
+  }
+
+  &--medium {
+    @include inputSizePadding($medium-y, $medium-x, $coffee-font-medium);
+  }
+
+  &--large {
+    @include inputSizePadding($large-y, $large-x, $coffee-font-large);
+  }
+
+  &--small.is-round {
+    @include inputRoundSize($small-x);
+  }
+
+  &--medium.is-round {
+    @include inputRoundSize($medium-x);
+  }
+
+  &--large.is-round {
+    @include inputRoundSize($large-x);
+  }
+}
