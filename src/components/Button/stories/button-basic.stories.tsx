@@ -51,3 +51,10 @@ Text.args = {
   variant: "text",
   onClick: () => console.log('Text')
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: "Disabled",
+  variant: "primary",
+  disabled: true
+};
