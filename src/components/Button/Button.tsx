@@ -1,19 +1,9 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import classnames from 'classnames'
+import ButtonProps from '../../interfaces/Button'
 import "./button.scss"
 
-interface Props {
-  size?: 'small' | 'medium' | 'large'
-  variant: 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'text'
-  label?: string
-  disabled?: boolean | undefined
-  round?: boolean | undefined
-  plain?: boolean | undefined
-  children?: ReactNode
-  onClick?: () => void | any
-}
-
-export const Button: React.FC<Props> = (props: Props) => {
+export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const {
     size = 'medium',
     variant = 'primary',
