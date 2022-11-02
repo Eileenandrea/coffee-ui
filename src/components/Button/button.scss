@@ -1,12 +1,5 @@
 @import "../index.scss";
 
-$small-y: 0.5rem;
-$small-x: 1rem;
-$medium-y: 0.75rem;
-$medium-x: 1.5rem;
-$large-y: 1rem;
-$large-x: 2rem;
-
 @mixin buttonThemedStyles(
   $text-color,
   $bg-color,
@@ -51,10 +44,10 @@ $large-x: 2rem;
 }
 
 .btn {
-  color: #FFF;
   border-radius: 0.5rem;
+  font-size: $coffee-font-medium;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: $medium-y, $medium-x;
   cursor: pointer;
   user-select: none;
   border: 1px solid;
@@ -173,9 +166,9 @@ $large-x: 2rem;
   
   &--text {
     @include buttonThemedStyles(
-      $coffee-dark-main,
+      $coffee-text-main,
       $coffee-light-main,
-      $coffee-dark-main,
+      $coffee-text-main,
       $coffee-primary-main,
       $coffee-primary-plain,
       $coffee-primary-plain-border
@@ -187,9 +180,9 @@ $large-x: 2rem;
   
   &--text.is-plain {
     @include buttonThemedStyles(
-      $coffee-dark-main,
+      $coffee-text-main,
       $coffee-light-main,
-      $coffee-dark-main,
+      $coffee-text-main,
       $coffee-primary-main,
       $coffee-light-main,
       $coffee-primary-plain-border
